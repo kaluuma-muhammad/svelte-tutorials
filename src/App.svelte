@@ -5,14 +5,6 @@
 
 	// Reative value
 	$: fullName = `${firstName} ${lastName}`;
-
-	// const changeColor = () => {
-	// 	color = "Red";
-	// };
-
-	// const inputChangeColor = (e) => {
-	// 	color = e.target.value;
-	// };
 </script>
 
 <main>
