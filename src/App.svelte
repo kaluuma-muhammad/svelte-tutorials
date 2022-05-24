@@ -4,6 +4,11 @@
 		{id: 2, name: 'Roman', age: 20, favColor: 'Blue'},
 		{id: 3, name: 'Malone', age: 23, favColor: 'Black'}
 	];
+
+	const deletePerson = (id) => {
+		// Delete person
+		people = people.filter((person) => person.id != id);
+	};
 </script>
 
 <main>
@@ -11,6 +16,8 @@
 		<div>
 			<h3>{person.name} <samp><i>{person.age}yrs</i></samp></h3>
 			<p>Favourite colour: {person.favColor}</p>
+
+			<button on:click={() => deletePerson(person.id)}>Delete</button>
 		</div>
 	{:else}
 		<p>There's no people to show</p>
