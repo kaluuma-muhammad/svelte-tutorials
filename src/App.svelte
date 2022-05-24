@@ -1,10 +1,19 @@
 <script>
-	export let name;
+	let name = "Meddy";
+	let country = "Uganda";
+	let district = "Kampala";
+
+	const changeDistrict = () => {
+		district = "Mpigi";
+	};
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>From: {country}</p>
+	<p>District: {district}</p>
+
+	<button on:click={changeDistrict}>Change District</button>
 </main>
 
 <style>
