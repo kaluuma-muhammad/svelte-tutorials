@@ -1,18 +1,20 @@
 <script>
-	let firstName = "Meddy";
-	let lastName = "Clays";
-	let color = "Black";
-
-	// Reative value
-	$: fullName = `${firstName} ${lastName}`;
+	let people = [
+		{id: 1, name: 'Shakira', age: 17, favColor: 'Red'},
+		{id: 2, name: 'Roman', age: 20, favColor: 'Blue'},
+		{id: 3, name: 'Malone', age: 23, favColor: 'Black'}
+	];
 </script>
 
 <main>
-	<p>Name: {fullName} - Favourite color: {color}</p>
-
-	<input type="text" placeholder="First Name" bind:value={firstName}>
-	<input type="text" placeholder="Last Name" bind:value={lastName}>
-	<input type="text" placeholder="Enter Color" bind:value={color}>
+	{#each people as person (person.id)}
+		<div>
+			<h3>{person.name} <samp><i>{person.age}yrs</i></samp></h3>
+			<p>Favourite colour: {person.favColor}</p>
+		</div>
+	{:else}
+		<p>There's no people to show</p>
+	{/each}
 </main>
 
 <style>
@@ -22,13 +24,6 @@
 		max-width: 240px;
 		margin: 0 auto;
 	}
-
-	/* h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	} */
 
 	@media (min-width: 640px) {
 		main {
