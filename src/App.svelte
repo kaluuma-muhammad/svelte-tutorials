@@ -1,6 +1,6 @@
 <script>
 	let people = [
-		{id: 1, name: 'Shakira', age: 17, favColor: 'Red'},
+		{id: 1, name: 'Shakira', age: 17, favColor: 'Green'},
 		{id: 2, name: 'Roman', age: 20, favColor: 'Blue'},
 		{id: 3, name: 'Malone', age: 23, favColor: 'Black'}
 	];
@@ -15,6 +15,13 @@
 	{#each people as person (person.id)}
 		<div>
 			<h3>{person.name} <samp><i>{person.age}yrs</i></samp></h3>
+			{#if person.favColor === "Black"}
+				<p><strong>Admin User</strong></p>
+			{:else if person.favColor === "Blue"}
+				<p><strong>Primary User</strong></p>
+			{:else}
+				<p><strong>Verified User</strong></p>
+			{/if}
 			<p>Favourite colour: {person.favColor}</p>
 
 			<button on:click={() => deletePerson(person.id)}>Delete</button>
