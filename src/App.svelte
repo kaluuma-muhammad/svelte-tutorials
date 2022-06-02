@@ -18,7 +18,24 @@
 	};
 </script>
 
-<Modal message="Hey, I'm a prop value" {showModal} on:click={toggleModal}/>
+<Modal {showModal} on:click={toggleModal}>
+	<h3>Add New Person</h3>
+	<form>
+		<div class="">
+			<input type="text" name="name" placeholder="Enter Name">
+		</div>
+		<div class="">
+			<input type="text" name="favColor" placeholder="Enter Favourite Color">
+		</div>
+		<div class="">
+			<input type="text" name="age" placeholder="Enter Age">
+		</div>
+		<button>Add Person</button>
+	</form>
+	<!-- <div slot="footer">
+		<h3>Form Footer</h3>
+	</div> -->
+</Modal>
 
 <main>
 	<button on:click={toggleModal}>Open Modal</button>
