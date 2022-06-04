@@ -9,6 +9,13 @@
 		{id: 3, name: 'Malone', age: 23, favColor: 'Black'}
 	];
 
+	const addPerson = (e) => {
+		// console.log(e.detail);
+		const person = e.datail;
+		people = [person, ...people];
+		showModal = false;
+	};
+
 	const deletePerson = (id) => {
 		// Delete person
 		people = people.filter((person) => person.id != id);
@@ -20,7 +27,7 @@
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
-	<AddPersonForm />
+	<AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 <main>
