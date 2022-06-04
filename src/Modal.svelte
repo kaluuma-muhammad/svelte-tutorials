@@ -13,7 +13,6 @@
     <div class="backdrop" on:click|self>
         <div class="modal" class:promo={isPromo}>
             <slot></slot>
-            <!-- <slot name="footer"></slot> -->
         </div>
     </div>
 {/if}
